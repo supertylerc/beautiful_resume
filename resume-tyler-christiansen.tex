@@ -1,0 +1,178 @@
+% resume.tex
+% vim:set ft=tex spell:
+
+\documentclass[10pt,letterpaper]{article}
+\usepackage[letterpaper,margin=0.75in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{mdwlist}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{tgpagella}
+\pagestyle{empty}
+\setlength{\tabcolsep}{0em}
+
+% indentsection style, used for sections that aren't already in lists
+% that need indentation to the level of all text in the document
+\newenvironment{indentsection}[1]%
+{\begin{list}{}%
+	{\setlength{\leftmargin}{#1}}%
+	\item[]%
+}
+{\end{list}}
+
+% opposite of above; bump a section back toward the left margin
+\newenvironment{unindentsection}[1]%
+{\begin{list}{}%
+	{\setlength{\leftmargin}{-0.5#1}}%
+	\item[]%
+}
+{\end{list}}
+
+% format two pieces of text, one left aligned and one right aligned
+\newcommand{\headerrow}[2]
+{\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
+	#1 &
+	#2 \\
+\end{tabular*}}
+
+% make "C++" look pretty when used in text by touching up the plus signs
+\newcommand{\CPP}
+{C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize\bf ++}}
+
+% and the actual content starts here
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{Tyler Christiansen}}
+
+480 Timberhead Ln\ \ \textbullet
+\ \ Foster City, CA 94404
+\\
+(864) 346-4095\ \ \textbullet
+\ \ mail@tylerc.me
+\end{center}
+
+\hrule
+\vspace{-0.4em}
+\subsection*{Experience}
+
+\begin{itemize}
+	\parskip=0.1em
+
+	\item
+	\headerrow
+		{\textbf{Production Networks, Aol}}
+		{\textbf{San Mateo, CA}}
+	\\
+	\headerrow
+		{\emph{Network Engineer}}
+		{\emph{April 2014 -- Present}}
+	\begin{itemize*}
+        \item \emph{Hired} as the sole network engineer for Adap.tv.  Managed application delivery infrastructure, from services on servers to
+            network switches, routers, firewalls, and load balancers.  Served as lead for all networking decisions, design, and trouble.
+        \item \emph{Expanded} to Aol Production Networks team to design, support, and maintain the backbone and data center networks.
+            \\
+            \\
+            Projects include: Adap.tv and Aol network merger, network automation design and build, AWS VPC design and integration, and
+            application delivery infrastructure design
+	\end{itemize*}
+
+	\item
+	\headerrow
+		{\textbf{Operations, Beats Music}}
+		{\textbf{San Francisco, CA}}
+	\\
+	\headerrow
+		{\emph{Network Engineer}}
+		{\emph{June 2013 -- April 2014}}
+	\begin{itemize*}
+        \item \emph{Recruited} to design and support national data center networks for a large scale music streaming service.  Responsible for
+            selecting and implementing network management and monitoring software.  Responsible for service status reporting.  Ensured 100\%
+            network infrastructure availability.  Established IPSec+NAT for communication with third party partners.
+        \\
+        \\
+        Projects include: hadoop network infrastructure design, load balancer acquisition, network monitoring infrastructure, partner communication
+        encryption.
+	\end{itemize*}
+    
+    \item
+	\headerrow
+		{\textbf{Core IP/MPLS, Windstream Communications}}
+		{\textbf{Greenville, SC}}
+	\\
+	\headerrow
+		{\emph{Network Engineer}}
+		{\emph{April 2012 -- July 2013}}
+	\begin{itemize*}
+        \item \emph{Hired} to support national core IP/MPLS network.  Handled escalated L2/L3 VPNs and VPLS service.  Handled core MPLS and
+            BGP issues.  Designed network maintenance events to proactively and reactively maintain the health of network services.
+            Implemented network change controls to enable new core and edge services.
+	\end{itemize*}
+
+    \item
+	\headerrow
+		{\textbf{Network Operations, Windstream Communications}}
+		{\textbf{Greenville, SC}}
+	\\
+	\headerrow
+		{\emph{Network Analyst}}
+		{\emph{April 2011 -- April 2012}}
+	\begin{itemize*}
+        \item \emph{Hired} to monitor national data, optical, and voice networks.  Served as technical lead for data network triage.
+            Trained new hires in process and triage for voice, optical, and data network elements.  Ensured proper escalation and
+            maintenance management.
+	\end{itemize*}
+
+    \item
+	\headerrow
+		{\textbf{Plant Operations, Windstream Communications}}
+		{\textbf{Milledgeville, GA}}
+	\\
+	\headerrow
+		{\emph{OSP Technician}}
+		{\emph{March 2009 -- April 2011}}
+	\begin{itemize*}
+        \item \emph{Hired} to install and support outside plant.  Installed analog voice and xDSL services for residential and
+            business customers.  Served as technical lead for xDSL and small business networking services for area.
+	\end{itemize*}
+
+
+\end{itemize}
+
+% This makes for a good place to force a pagebreak depending on your content and page flow.
+%\pagebreak
+
+\hrule
+\vspace{-0.4em}
+\subsection*{Core Technical Skills}
+
+\begin{indentsection}{\parindent}
+\hyphenpenalty=1000
+\begin{description*}
+    \item[Specialties:]
+        Network automation and change control using Git, Gerrit, Jenkins, Ansible, and Python.
+    \item[Programming Languages:] 
+        Bash, Python, Ruby
+\end{description*}
+\end{indentsection}
+
+
+\hrule
+\vspace{-0.4em}
+\subsection*{Talks Given}
+
+\begin{itemize}
+    \parskip=0.1em
+
+    \item
+    \headerrow
+        {\textbf{SF Network Automation Meetup}}
+        {\textbf{July 2014}}
+    \\
+    \headerrow
+        {\emph{Continuous Deployment with Ansible}}
+        {\emph{Introduction to using Ansible to kickstart automated network changes.}}
+
+\end{itemize}
+
+\end{document}
